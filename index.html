@@ -15,8 +15,29 @@
 </head>
 
 <body>
-	<input data-input type="file" accept="image/*" capture>
-	<img data-preview/>
+
+	<form method="post " action="">
+		<input data-input type="file" accept="image/*" capture>
+		<img data-preview/>
+
+		<div>
+			<button type="submit">Upload Image</button>
+		</div>
+	</form>
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCTVK7d719KT2-ylcUAGZ4x0SY0Pc1nuVY",
+			authDomain: "pick-up-10-2e988.firebaseapp.com",
+			databaseURL: "https://pick-up-10-2e988.firebaseio.com",
+			projectId: "pick-up-10-2e988",
+			storageBucket: "",
+			messagingSenderId: "317354700389"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 	<script src="/index.js"></script>
 </body>
 
