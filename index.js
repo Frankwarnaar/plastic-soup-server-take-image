@@ -16,9 +16,10 @@ function saveImage() {
     reader.readAsDataURL(file);
 
     // Create a root reference
-    const storageRef = firebase.storage().ref();
-    alert("storageRef", storageRef);
-    ref
+    const ref = firebase.storage().ref();
+    const fileRef = ref.child(file.name);
+
+    fileRef
       .put(file)
       .then(function(snapshot) {
         alert("uploaded a blob or file");
@@ -27,9 +28,9 @@ function saveImage() {
         alert("error", error);
       });
 
-    fetch("http://www.example.net", {
-      method: "POST",
-      body: file
-    }).then(response => response.json());
+    // fetch("http://www.example.net", {
+    //   method: "POST",
+    //   body: file
+    // }).then(response => response.json());
   }
 }
