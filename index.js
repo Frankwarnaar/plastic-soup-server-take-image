@@ -3,7 +3,7 @@ const preview = document.querySelector('[data-preview]');
 
 input.addEventListener('change', saveImage);
 
-function saveImage(input) {
+function saveImage() {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
 
