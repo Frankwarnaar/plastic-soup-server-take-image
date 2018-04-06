@@ -15,22 +15,27 @@ function saveImage() {
 
     reader.readAsDataURL(file);
 
-    // Create a root reference
-    const ref = firebase.storage().ref();
-    const fileRef = ref.child(file.name);
-
-    fileRef
-      .put(file)
-      .then(function(snapshot) {
-        alert("uploaded a blob or file");
-      })
-      .catch(function(error) {
-        alert("error", error);
-      });
+    uploadToFirebase(file);
 
     // fetch("http://www.example.net", {
     //   method: "POST",
     //   body: file
     // }).then(response => response.json());
   }
+}
+
+function uploadToFirebase(file) {
+  // Create a root reference
+  const ref = firebase.storage().ref();
+  const fileRef = ref.child(file.name);
+
+  fileRef
+    .put(file)
+    .then(function(snapshot) {
+      alert("uploaded a blob or file");
+      alert(snapshot);
+    })
+    .catch(function(error) {
+      alert("error", error);
+    });
 }
